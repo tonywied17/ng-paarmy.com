@@ -1,0 +1,27 @@
+    <h2 class="hidden sm:block">The Regiments at Pennsylvania</h2>
+    <h2 class="block sm:hidden">Our Regiments</h2>
+
+
+<div class="mt-10">
+
+    <button class="mr-2" color="accent" mat-raised-button [routerLink]="['/regiments', 69]">69th</button>
+    <button class="mr-2" color="accent" mat-raised-button [routerLink]="['/regiments', 72]">72nd</button>
+    <button class="mr-2" color="accent" mat-raised-button [routerLink]="['/regiments', 116]">116th</button>
+
+
+    <div *ngIf="id == 69">
+        <h3>69th</h3>
+    </div>
+    
+    <div *ngIf="id == 72">
+        <h3>72nd</h3>
+    </div>
+    
+    <div *ngIf="id == 116">
+        <h3>116th</h3>
+    </div>
+
+
+    <p class="p">This page is currently under a remodel.</p>
+
+</div>

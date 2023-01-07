@@ -1,0 +1,28 @@
+.home-load {
+    animation: fadetop 0.3s ease 0s 1 normal forwards;
+    transition: color 500ms;
+  }
+  .gallery-load {
+    animation: fadetop 0.3s ease 0s 1 normal forwards;
+    transition: color 500ms;
+  }
+  .schedule-load {
+    animation: fadetop 0.3s ease 0s 1 normal forwards;
+    transition: color 500ms;
+  }
+  .regiments-load {
+    animation: fadetop 0.3s ease 0s 1 normal forwards;
+    transition: color 500ms;
+  }
+
+  @keyframes fadetop {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

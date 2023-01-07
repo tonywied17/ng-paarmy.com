@@ -1,0 +1,54 @@
+<!-- 
+
+  <p
+      *ngFor="let post of posts| paginate: { itemsPerPage: 10, currentPage: p }"
+      class="list-group-item">
+      {{ post.map }}
+  </p> -->
+
+
+<h2 class="sm:hidden"
+  style="">
+  The Gallery</h2>
+
+<h2 class="hidden sm:block"
+  style="">
+  The Gallery at Pennsylvania</h2>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7 mb-5 mt-10">
+
+  <div class="bg-[#dbd3c4]/80 rounded-lg pb-3 ring-1 ring-slate-900/5 shadow-xl w-full m-auto animate-load"
+    *ngFor="let item of gallery| paginate: { itemsPerPage: 9, currentPage: p }; let i = index">
+
+
+
+    <div *ngIf="item.type == 'image'" class="rounded-sm my-2 shadow-md blur-[0.2px]"
+      style="background-image: url('{{item.url}}');background-size: 250px;height:180px;background-size: cover;opacity: 90%;"
+      loading="lazy"></div>
+
+    <div *ngIf="item.type == 'video'" class="rounded-sm my-2 shadow-mdblur-[0.2px]"
+      style="background-image: url('https://i.ytimg.com/vi/{{item.url}}/mqdefault.jpg');background-size: 250px;height:180px;background-size: cover;opacity: 90%;"
+      loading="lazy"></div>
+
+    <div *ngIf="item.type == 'image'" class="px-2 mb-[-8px] text-right">
+      <span class="float-left"><i style="margin-left:5px;margin-top:-2px;" class="fa-solid fa-image"></i></span>
+
+      <button (click)="open(item.url, 'image', 1060, 720)" mat-button class="!text-[#49252f] font-[500] mt-[-4px]">View <i
+          class="fa-solid fa-magnifying-glass" style="margin-left:5px;margin-top:-2px;"></i></button>
+    </div>
+
+    <div *ngIf="item.type == 'video'" class="px-2 mb-[-8px] text-right">
+      <span class="float-left"><i style="margin-left:5px;margin-top:-2px;" class="fa-brands fa-youtube"></i></span>
+
+      <button (click)="open('https://www.youtube.com/embed/' + item.url, 'video', 1060, 720)" mat-button class="!text-[#49252f] font-[500] mt-[-4px]">View <i
+          class="fa-solid fa-magnifying-glass" style="margin-left:5px;margin-top:-2px;"></i></button>
+    </div>
+
+
+  </div>
+
+</div>
+
+<div width="100%">
+  <pagination-controls (pageChange)="p = $event" class="mx-auto text-center"></pagination-controls>
+</div>
