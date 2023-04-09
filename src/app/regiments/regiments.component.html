@@ -3,25 +3,136 @@
 
 
 <div class="mt-10">
-
+<!-- 
     <button class="mr-2" color="accent" mat-raised-button [routerLink]="['/regiments', 69]">69th</button>
     <button class="mr-2" color="accent" mat-raised-button [routerLink]="['/regiments', 72]">72nd</button>
-    <button class="mr-2" color="accent" mat-raised-button [routerLink]="['/regiments', 116]">116th</button>
+    <button class="mr-2" color="accent" mat-raised-button [routerLink]="['/regiments', 116]">116th</button> -->
 
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <button routerLinkActive="!bg-[#c9c1b2] shadow-lg" [routerLink]="['/regiments', 69]" class="bg-[#e9dfcf] hover:bg-[#e0d8c8] text-[#6e6b67] font-serif font-bold py-2 px-4 rounded shadow-md cursor-pointer flex flex-col items-center border-none">
+            <h3 class="text-xl font-bold mb-2 py-2 font-[300] uppercase">69th Pennsylvania</h3>
+            <div class="w-full h-32 bg-gray-200 mb-4 sepia" 
+            style="background-image: url('https://paarmy.com/_OLD/history/69.jpg');
+                background-position-y: 301px;
+                background-size: cover;"></div>
+          <p class="text-sm text-[#8d8981] font-[300]">Learn more about the history and company structure.</p>
+        </button>
+      
+        <button routerLinkActive="!bg-[#c9c1b2] shadow-lg" [routerLink]="['/regiments', 72]" class="bg-[#e9dfcf] hover:bg-[#e0d8c8] text-[#6e6b67] font-serif font-bold py-2 px-4 rounded shadow-md cursor-pointer flex flex-col items-center border-none">
+            <h3 class="text-xl font-bold mb-2 py-2 font-[300] uppercase">72nd Pennsylvania</h3>
+            <div class="w-full h-32 bg-gray-200 mb-4 sepia" 
+            style="background-image: url('https://paarmy.com/_OLD/history/72.jpg');
+                background-position-y: center;
+                background-size: cover;"></div>
+            <p class="text-sm text-[#8d8981] font-[300]">Learn more about the history and company structure.</p>
+        </button>
+      
+        <button routerLinkActive="!bg-[#c9c1b2] shadow-lg" [routerLink]="['/regiments', 116]" class="bg-[#e9dfcf] hover:bg-[#e0d8c8] text-[#6e6b67] font-serif font-bold py-2 px-4 rounded shadow-md cursor-pointer flex flex-col items-center border-none">
+            <h3 class="text-xl font-bold mb-2 py-2 font-[300] uppercase">116th Pennsylvania</h3>
+            <div class="w-full h-32 bg-gray-200 mb-4 sepia" 
+            style="background-image: url('https://molex.cloud/2023/April/9/_D6W/116_2.jpg');
+                background-position-y: center;
+                background-size: cover;"></div>
+            <p class="text-sm text-[#8d8981] font-[300]">Learn more about the history and company structure.</p>
+        </button>
+      </div>
 
     <div *ngIf="id == 69">
-        <h3>69th</h3>
+        <h3 class="text-[1.5rem] py-5 mt-5" style="border-bottom: 2px dashed #c7c0b2;">History of the 69th Pennsylvania</h3>
+
+        <div class="!overflow-y-scroll mt-10 pt-[-10px] px-10" style="max-height: 420px;">
+
+        <p class="font-[300] first-line:uppercase first-line:tracking-widest first-line:font-[500]
+        first-letter:text-7xl first-letter:font-bold first-letter:text-[#3e495c]
+        first-letter:mr-3 first-letter:float-left">
+            The 69th Pennsylvania was recruited from Philadelphia Irish militia companies of the 2nd Regiment, Pennsylvania Militia. It was mustered into service on August 19, 1861, with Joshua T. Owen as its first colonel. Many of its members had served in the 24th Pennsylvania, a three-month volunteer regiment. The unit was first designated the 2nd California. It left for Washington, D.C. that September, before being assigned to the Army of the Potomac in October as part of Colonel Edwin Baker's California Brigade. The regiment’s first action was at the Battle of Balls Bluff. After this battle, its name was changed to the 68th Penna. for a short time and then the 69th. They made an attempt with the 69th New York to form an Irish Brigade, but Governor Andrew Gregg Curtin of Pennsylvania opposed the idea, which led to the proposal being dropped. The 68th had their regimental designation changed to the 69th in honor of the 69th New York Infantry.
+        </p>
+
+        <p class="pt-4 font-[300] indent-8">
+            The 69th served in the Peninsula Campaign, during which it was complimented by Maj. Gen. Joseph Hooker for making “the first successful bayonet charge of the war.” Its next major action was at the Battle of Antietam. It lost heavily at the Battle of Fredericksburg, but missed any major action at Chancellorsville, seeing only minor skirmishing.
+        </p>
+
+        <p class="pt-4 font-[300]  indent-8">
+            The unit played a critical role at the Battle of Gettysburg, helping repel both Brig. Gen. Ambrose Wright’s charge on July 2 and Pickett's Charge on July 3. Its casualties over the last two days of the battle were enormous, losing 143 men out of 268, including Colonel Dennis O'Kane, Lieutenant Colonel Martin Tschudy, two captains, and a lieutenant. The regiment's ranking officer, Major Duffy, was seriously wounded but refused to give up command until the battle was over. The 69th was the only regiment not to withdraw from defending the stone wall in front of the Copse of Trees during the charge. They were heavily engaged in hand to hand combat; while having been flanked on their right and left flanks as a result of the withdrawal of the two companies from the 71st Pennsylvania Infantry, on their right, and the 59th New York Infantry, on their left. Following the repulse of Pickett, there were numerous Confederate Battle Flags left lying on the field directly to the front of the 69th. The 69th was so devastated by casualties and busy tending to its own wounded while also sending Confederate prisoners to the rear that it failed to secure any. Instead members of regiments who came to assist the 69th with the repulse, during a later point of the assault, went to the 69th's front and claimed the flags as prizes. The 69th finished the campaign under the command of Captain William Davis of Co K.
+        </p>
+
+        <p class="pt-4 font-[300]  indent-8">
+            The 69th fought in Grant’s Overland Campaign, again losing heavily. At the Battle of Spotsylvania Court House, Lieutenant Charles McAnally of Company D captured a Confederate battle flag. He was later awarded the Medal of Honor for this act, becoming the only soldier of the 69th so decorated. After the Battle of Cold Harbor, the 71st Pennsylvania was merged into the 69th. During the Siege of Petersburg, the Philadelphia Brigade was broken up, with the 72nd Pennsylvania mustered out of service and the 106th reduced to a single battalion. The 69th participated in the pursuit of the Army of Northern Virginia during the Appomattox Campaign. The regiment was mustered out at Ball’s Cross-Roads, near Washington, D.C., on July 1, 1865. Of the original 1,000 men mustered into service at the formation of the regiment, only 56 remained at Appomattox.
+        </p>
+
+        <p class="pt-4 font-[300]  indent-8">
+            The 69th was the only Pennsylvania regiment to carry a green "Irish" flag into battle.
+        </p>
+        </div>
+        <h3 class="text-[1.5rem] py-5 mt-5" style="border-bottom: 2px dashed #c7c0b2;">69th Pennsylvania Company Structure</h3>
     </div>
     
     <div *ngIf="id == 72">
-        <h3>72nd</h3>
+        
+
+        <h3 class="text-[1.5rem] py-5 mt-5" style="border-bottom: 2px dashed #c7c0b2;">History of the 72nd Pennsylvania</h3>
+
+        <div class="!overflow-y-scroll mt-10 pt-[-10px] px-10" style="max-height: 420px;">
+
+        <p class="font-[300] first-line:uppercase first-line:tracking-widest first-line:font-[500]
+        first-letter:text-7xl first-letter:font-bold first-letter:text-[#3e495c]
+        first-letter:mr-3 first-letter:float-left">
+        The 72nd Pennsylvania Infantry (originally raised as the 3rd California) was a volunteer infantry regiment which served in the Union Army during the American Civil War. It was part of the famous Philadelphia Brigade. They wore a very Americanized zouave uniform, consisting of a zouave jacket trimmed with red without a tombeux on the jacket, sky-blue trousers with a red stripe down the leg, a sky-blue zouave vest trimmed in red, white gaiters, and a dark blue kepi. The jacket was decorated with 16 ball brass buttons down the front of the jacket, which were not part of the original French Zouave uniform.
+        </p>
+
+        <p class="pt-4 font-[300] indent-8">
+            Colonel Edward D. Baker, powerful congressman and close friend of President Lincoln, organized the Third California Volunteer Infantry Regiment in Philadelphia, one of four regiments of the California Brigade. Baker wanted the brigade to represent and give credit to California in the Federal army. The regiment was recruited from among the firemen of Philadelphia, Pennsylvania in early August 1861. DeWitt Clinton Baxter was its colonel, Theodore Hesser lieutenant colonel, and J. M. De Witt major.    
+        </p>
+
+        <p class="pt-4 font-[300]  indent-8">
+            After Baker's death October 21, 1861 at the Battle of Ball's Bluff, Pennsylvania reclaimed the regiments as its own. The California Brigade became the Philadelphia Brigade and each unit was given a new number. The Third California Regiment became the 72nd Pennsylvania Regiment. After some months of patrolling along the Potomac River, the 72nd was transported to the Peninsula. It saw its first action at the Battle of Seven Pines on May 1, 1862. During the Seven Days Battles, it supported the army's rear guard.
+        </p>
+
+        <p class="pt-4 font-[300]  indent-8">
+            The 72nd saw light skirmishing at the Battle of Chantilly. At the Battle of Antietam, the regiment participated in the attack on the West Woods, being routed along with much of the rest of the division. Nearly half of the regiment was lost, including several officers killed.
+        </p>
+
+        <p class="pt-4 font-[300]  indent-8">
+            At the Battle of Gettysburg, it defended the Angle on July 2 and 3. On the evening of the 2nd, it helped defeat Confederate Brigade General Ambrose R. Wright's attack, advancing just over the stone wall. The next day, it was placed in reserve for the brigade near the copse of trees. During Pickett's Charge, its position served as a rallying point for the left wing of the 71st and two companies of the 106th Pennsylvania, which had been driven back. Despite Brigadier General Alexander S. Webb's best efforts, these troops refused to counterattack for several minutes. This might have been due to the 71st's colorbearers being shot down. (Civil War regiments often followed the regimental flag since orders would have been difficult to hear on the battlefield.) At Gettysburg, Col. Baxter replaced the wounded General Webb in command of the Brigade, and Lt. Col. Hesser replaced him in command of the 72nd Regiment.
+        </p>
+
+        <p class="pt-4 font-[300]  indent-8">
+            The unit fought well during the Overland Campaign and in the beginning stages of the Siege of Petersburg. On June 24, 1864, the regiment was mustered out of service.
+        </p>
+
+        <p class="pt-4 font-[300]  indent-8">
+            A total of 1,600 men fought in the 72nd, of whom 1,053 became casualties, a 65% casualty rate.
+        </p>
+
+        </div>
+        <h3 class="text-[1.5rem] py-5 mt-5" style="border-bottom: 2px dashed #c7c0b2;">72nd Pennsylvania Company Structure</h3>
+
+
     </div>
     
     <div *ngIf="id == 116">
-        <h3>116th</h3>
+
+
+        <h3 class="text-[1.5rem] py-5 mt-5" style="border-bottom: 2px dashed #c7c0b2;">History of the 116th Irish Volunteers</h3>
+
+        <div class="!overflow-y-scroll mt-10 pt-[-10px] px-10" style="max-height: 420px;">
+
+        <p class="font-[300] first-line:uppercase first-line:tracking-widest first-line:font-[500]
+        first-letter:text-7xl first-letter:font-bold first-letter:text-[#3e495c]
+        first-letter:mr-3 first-letter:float-left">
+        The 116th Regiment, Pennsylvania Volunteer Infantry, was recruited from among the Irish Americans of Philadelphia, Pennsylvania, during the summer of 1862. Dennis Heenan served as its first colonel, St. Clair A. Mulholland as lieutenant colonel, and George H. Bardwell as major. At the end of August 1862, the regiment was ordered to report to Washington, D.C., and was assigned to the Irish Brigade, which was the 2nd Brigade, 1st Division, II Corps, Army of the Potomac. The following month, it was ordered to the Shenandoah Valley, where it saw minor skirmishing. At the Battle of Fredericksburg on December 13, the 116th charged up Marye's Heights. Despite losing many of their officers and men, including Colonel Heenan, they remained at the wall until dark. The regiment had lost so many men that it was consolidated into a battalion of four companies under the command of Mulholland.
+        </p>
+
+        <p class="pt-4 font-[300] indent-8">
+            The 116th performed well at the Battle of Chancellorsville, where it helped rescue the 5th Maine Battery from capture. In this action, Mulholland earned a Medal of Honor. On the second day of the Battle of Gettysburg, the 1st Division was sent into the Wheatfield to support the III Corps, where the 116th engaged in hand-to-hand combat. Caught in a crossfire, the division was forced to retreat. During Pickett's Charge the following day, the regiment supported the 2nd Connecticut Battery but wasn't needed in the fighting. During the following few months, the 116th remained in northern Virginia. In the spring of 1864, Mulholland was given permission to recruit the regiment back to full strength. Enough men were raised in Philadelphia to form Companies E, F, and G in addition to bringing the four companies at the front to strength, though many of the veterans were consolidated into A Company. Companies H, I, and K were raised in Pittsburgh. Mulholland was promoted to colonel, while Richard C. Dale became lieutenant colonel and John Teed, who had been captured at Gettysburg, major. The 116th fought all through the Overland Campaign, where it continued to lose heavily in officers and men. Mulholland was wounded at the Battle of Spotsylvania Court House and Dale was missing in action. Mulholland was wounded again at the Battle of Cold Harbor. Heavy losses continued during the Siege of Petersburg. In July, the Irish Brigade was broken up and the 116th was assigned to the 4th Brigade, 1st Division. After the Appomattox Campaign, the regiment was sent to Alexandria, where, on June 3, companies A, B, C, and D where mustered out. The remaining companies were mustered out on July 14 in Washington.
+        </p>
+
+
+        </div>
+        <h3 class="text-[1.5rem] py-5 mt-5" style="border-bottom: 2px dashed #c7c0b2;">116th Pennsylvania Company Structure</h3>
+
+
     </div>
 
-
-    <p class="p">This page is currently under a remodel.</p>
 
 </div>
