@@ -28,6 +28,7 @@ tomorrow.setDate(tomorrow.getDate() + 1)
 
 
 export class AppComponent implements OnInit {
+[x: string]: any;
   EuToday: any;
   EuTomorrow: any;
   UsToday: any;
@@ -177,8 +178,10 @@ usByTomorrow(day: string): void {
     });
   }
 
-  onlineNCO(){
-    
+  openMaps() {
+    window.open('https://app.paarmy.com/beta/maps', '_blank');
+    // or use router navigate instead:
+    // this.router.navigate(['https://app.paarmy.com/beta/maps']);
   }
 
   onlineUsers(){
