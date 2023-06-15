@@ -179,9 +179,7 @@ usByTomorrow(day: string): void {
   }
 
   openMaps() {
-    window.open('https://app.paarmy.com/beta/maps', '_blank');
-    // or use router navigate instead:
-    // this.router.navigate(['https://app.paarmy.com/beta/maps']);
+    window.open('https://app.paarmy.com/maps', '_blank');
   }
 
   onlineUsers(){
