@@ -1,117 +1,212 @@
-<div
-    class="nav bg-[#38455a]/95 backdrop-blur-sm sm:mt-[3em] sm:w-full mx-auto py-1.5 lg:py-2.5 sm:rounded-sm shadow-lg w-full sticky top-0 left-0 right-0 sm:h-auto sm:min-h-0 z-10">
-    <div class="mx-auto px-2 sm:px-6 lg:px-8">
-        <div class="relative flex h-16 items-center justify-between">
-            <div class="absolute inset-y-0 sm:hidden">
-                <!-- Mobile menu button-->
-
-                <button mat-flat-button (click)="toggle();scroll()" type="button"
-                    class="mt-3 inline-flex items-center justify-center !bg-[#516380e5]"><i
-                        class="fa-sharp fa-solid fa-bars"></i></button>
-            </div>
-            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <div class="flex flex-shrink-0 items-center">
-                    <img class="block h-8 w-auto" src="https://paarmy.com/assets/pa.png" alt="The Pennsylvania Army">
-
-                </div>
-
-                <div class="hidden sm:ml-6 sm:block">
-                    <div class="flex space-x-1">
-                        <button style="text-shadow: 0px 2px 4px rgba(57, 57, 57, 0.25);" mat-button color="primary"
-                            [routerLink]="['/home']" (click)="closeMenus()"
-                            routerLinkActive="!bg-[#485870] !text-[#a09e94] shadow-md"
-                            class="drop-shadow-md !text-[#e1e1e1] text-[1rem] duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !p-5">Home</button>
-
-                        <button style="text-shadow: 0px 2px 4px rgba(57, 57, 57, 0.25);" mat-button color="primary"
-                            [routerLink]="['/gallery']" (click)="closeMenus()"
-                            routerLinkActive="!bg-[#485870] !text-[#a09e94] shadow-md"
-                            class="drop-shadow-md !text-[#e1e1e1] font-serif text-[1rem] duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !p-5">Gallery</button>
-
-                        <button style="text-shadow: 0px 2px 4px rgba(57, 57, 57, 0.25);" mat-button color="primary"
-                            [routerLink]="['/schedule']" (click)="closeMenus()"
-                            routerLinkActive="!bg-[#485870] !text-[#a09e94] shadow-md"
-                            class="drop-shadow-md !text-[#e1e1e1] font-serif text-[1rem] duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !p-5">Schedule</button>
-
-                        <ng-template #notActive>
-                            <button style="text-shadow: 0px 2px 4px rgba(57, 57, 57, 0.25);" mat-button color="primary"
-                                [matMenuTriggerFor]="menu"
-                                class="drop-shadow-md !text-[#e1e1e1] font-serif text-[1rem] duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !p-5">Resources
-                                <i class="fa-sharp fa-solid fa-caret-down"></i></button>
-                        </ng-template>
+<div class="nav bg-[#38455a]/95 backdrop-blur-sm sm:mt-[3em] sm:w-full mx-auto py-1.5 lg:py-2.5 sm:rounded-sm shadow-lg w-full sticky top-0 left-0 right-0 sm:h-auto sm:min-h-0 z-10">
+	<div class="mx-auto px-2 sm:px-6 lg:px-8">
+		<div class="relative flex h-16 items-center justify-between">
+			<div class="absolute inset-y-0 sm:hidden">
+				<!-- Mobile menu button -->
 
 
-                        <button
-                            *ngIf="currentRoute == '/orders' || currentRoute == '/events' || currentRoute == '/marksmanship'; else notActive"
-                            style="text-shadow: 0px 2px 4px rgba(57, 57, 57, 0.25);" mat-button color="primary"
-                            [matMenuTriggerFor]="menu"
-                            class="!bg-[#485870] !text-[#e1e1e1] shadow-md drop-shadow-md font-serif text-[1rem] duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !p-5">Resources
-                            <i class="fa-sharp fa-solid fa-caret-down"></i></button>
+				<button (click)="toggle();scroll()"
+					mat-flat-button
+					type="button"
+					class="mt-3 inline-flex items-center justify-center !bg-[#516380e5]">
+					<i class="fa-sharp fa-solid fa-bars"></i>
+				</button>
+			</div>
+			<div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+				<div class="flex flex-shrink-0 items-center">
+					<img class="block h-8 w-auto"
+						src="https://paarmy.com/assets/pa.png"
+						alt="The Pennsylvania Army">
 
 
-                        <mat-menu #menu="matMenu" class="!mt-[29px] !bg-[#48252fd0] backdrop-blur-sm !w-[200px] !rounded-sm">
-                            <button [routerLink]="['/orders']"
-                                class="!font-serif !w-[100%] !rounded-none !py-5 my-[2px] !text-[0.9rem]" mat-button>In-Game
-                                Orders</button>
-                            <button [routerLink]="['/events']"
-                                class="!font-serif !w-[100%] !rounded-none !py-5 my-[2px] !text-[0.9rem]" mat-button>Event
-                                Types</button>
-                            <button [routerLink]="['/marksmanship']"
-                                class="!font-serif !w-[100%] !rounded-none !py-5 my-[2px] !text-[0.9rem]" mat-button>Marksmanship
-                                Test</button>
+				</div>
 
 
-                                <button (click)="openMaps()"
-                                class="!font-serif !w-[100%] !rounded-none !py-5 my-[2px] !text-[0.9rem]" mat-button>Maps & Units <sup class="text-white text-[0.65rem]"><i class="fa-solid fa-arrow-up-right-from-square"></i></sup></button>
+				<div class="hidden sm:ml-6 sm:block">
+					<div class="flex space-x-1">
+						<button [routerLink]="['/home']"
+							(click)="closeMenus()"
+							style="text-shadow: 0px 2px 4px rgba(57, 57, 57, 0.25);"
+							mat-button
+							color="primary"
+							routerLinkActive="!bg-[#485870] !text-[#a09e94] shadow-md"
+							class="drop-shadow-md !text-[#e1e1e1] text-[1rem] duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !p-5">
+							Home
+						</button>
 
-                            
-                            <!-- <button (click)="paApp()" class="!font-serif !w-[100%] !rounded-none !py-5 my-[2px] !text-[0.9rem]"
+
+						<button [routerLink]="['/gallery']"
+							(click)="closeMenus()"
+							style="text-shadow: 0px 2px 4px rgba(57, 57, 57, 0.25);"
+							mat-button
+							color="primary"
+							routerLinkActive="!bg-[#485870] !text-[#a09e94] shadow-md"
+							class="drop-shadow-md !text-[#e1e1e1] font-serif text-[1rem] duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !p-5">
+							Gallery
+						</button>
+
+
+						<button [routerLink]="['/schedule']"
+							(click)="closeMenus()"
+							style="text-shadow: 0px 2px 4px rgba(57, 57, 57, 0.25);"
+							mat-button
+							color="primary"
+							routerLinkActive="!bg-[#485870] !text-[#a09e94] shadow-md"
+							class="drop-shadow-md !text-[#e1e1e1] font-serif text-[1rem] duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !p-5">
+							Schedule
+						</button>
+
+
+						<ng-template #notActive>
+							<button [matMenuTriggerFor]="menu"
+								style="text-shadow: 0px 2px 4px rgba(57, 57, 57, 0.25);"
+								mat-button
+								color="primary"
+								class="drop-shadow-md !text-[#e1e1e1] font-serif text-[1rem] duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !p-5">
+								Resources
+								<i class="fa-sharp fa-solid fa-caret-down"></i>
+							</button>
+						</ng-template>
+
+
+
+						<button *ngIf="currentRoute == '/orders' || currentRoute == '/events' || currentRoute == '/marksmanship'; else notActive"
+							[matMenuTriggerFor]="menu"
+							style="text-shadow: 0px 2px 4px rgba(57, 57, 57, 0.25);"
+							mat-button
+							color="primary"
+							class="!bg-[#485870] !text-[#e1e1e1] shadow-md drop-shadow-md font-serif text-[1rem] duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !p-5">
+							Resources
+							<i class="fa-sharp fa-solid fa-caret-down"></i>
+						</button>
+
+
+
+						<mat-menu #menu="matMenu"
+							class="!mt-[29px] !bg-[#48252fd0] backdrop-blur-sm !w-[200px] !rounded-sm">
+							<button [routerLink]="['/orders']"
+								class="!font-serif !w-[100%] !rounded-none !py-5 my-[2px] !text-[0.9rem]"
+								mat-button>
+								In-Game
+                                Orders
+							</button>
+							<button [routerLink]="['/events']"
+								class="!font-serif !w-[100%] !rounded-none !py-5 my-[2px] !text-[0.9rem]"
+								mat-button>
+								Event
+                                Types
+							</button>
+							<button [routerLink]="['/marksmanship']"
+								class="!font-serif !w-[100%] !rounded-none !py-5 my-[2px] !text-[0.9rem]"
+								mat-button>
+								Marksmanship
+                                Test
+							</button>
+
+
+
+							<button (click)="openMaps()"
+								class="!font-serif !w-[100%] !rounded-none !py-5 my-[2px] !text-[0.9rem]"
+								mat-button>
+								Maps & Units
+								<sup class="text-white text-[0.65rem]">
+									<i class="fa-solid fa-arrow-up-right-from-square"></i>
+								</sup>
+							</button>
+
+
+
+							<!-- <button (click)="paApp()" class="!font-serif !w-[100%] !rounded-none !py-5 my-[2px] !text-[0.9rem]"
                                 mat-button>#PA Army
                                 App</button> -->
-                        </mat-menu>
-
-                        <button style="text-shadow: 0px 2px 4px rgba(57, 57, 57, 0.25);" mat-button color="primary"
-                            [routerLink]="['/regiments']" (click)="closeMenus()"
-                            routerLinkActive="!bg-[#485870] !text-[#a09e94] shadow-md"
-                            class="drop-shadow-md !text-[#e1e1e1] font-serif text-[1rem] duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !p-5">Regiments</button>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-
-                <button mat-raised-button color="accent" target="_blank" (click)="joinDiscord()">Join Now <i class="fa-brands fa-discord !ml-1"></i></button>
-
-            </div>
+						</mat-menu>
 
 
-        </div>
-    </div>
+						<button [routerLink]="['/regiments']"
+							(click)="closeMenus()"
+							style="text-shadow: 0px 2px 4px rgba(57, 57, 57, 0.25);"
+							mat-button
+							color="primary"
+							routerLinkActive="!bg-[#485870] !text-[#a09e94] shadow-md"
+							class="drop-shadow-md !text-[#e1e1e1] font-serif text-[1rem] duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !p-5">
+							Regiments
+						</button>
+					</div>
 
-    <!-- Mobile menu, show/hide based on menu state. -->
-    <div *ngIf="menuOpen" class="sm:hidden h-96 grid grid-cols-1 gap-0 content-center will-change-auto animate-top sm:animate-none"
-        id="mobile-menu">
 
-        <div class="space-y-5 px-2 py-8 bg-[#5d6c86]/80 mx-6 rounded-md drop-shadow-lg">
-            <button mat-button color="primary" (click)="toggle();" [routerLink]="['/home']"
-                routerLinkActive="!bg-[#56363f] !text-[#bbb9ae] !h-[45px] !font-bold"
-                class="!text-[#bbb9ae] !w-full !mx-auto font-serif text-2xl duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !py-2">Home</button>
-            <button mat-button color="primary" (click)="toggle()" [routerLink]="['/gallery']"
-                routerLinkActive="!bg-[#56363f] !text-[#bbb9ae] !h-[45px] !font-bold"
-                class="!text-[#bbb9ae] !w-full !mx-auto font-serif text-2xl duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !py-2">Gallery</button>
-            <button mat-button color="primary" (click)="toggle()" [routerLink]="['/schedule']"
-                routerLinkActive="!bg-[#56363f] !text-[#bbb9ae] !h-[45px] !font-bold"
-                class="!text-[#bbb9ae] !w-full !mx-auto font-serif text-2xl duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !py-2">Schedule</button>
-            <button mat-button color="primary" (click)="toggle()" [routerLink]="['/regiments']"
-                routerLinkActive="!bg-[#56363f] !text-[#bbb9ae] !h-[45px] !font-bold"
-                class="!text-[#bbb9ae] !w-full !mx-auto font-serif text-2xl duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !py-2">Regiments</button>
+				</div>
+			</div>
 
-        </div>
-    </div>
+
+			<div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+
+
+				<button (click)="joinDiscord()"
+					mat-raised-button
+					color="accent"
+					target="_blank">
+					Join Now
+					<i class="fa-brands fa-discord !ml-1"></i>
+				</button>
+
+
+			</div>
+
+
+
+		</div>
+	</div>
+
+
+	<!-- Mobile menu, show/hide based on menu state. -->
+	<div *ngIf="menuOpen"
+		class="sm:hidden h-96 grid grid-cols-1 gap-0 content-center will-change-auto animate-top sm:animate-none"
+		id="mobile-menu">
+
+
+		<div class="space-y-5 px-2 py-8 bg-[#5d6c86]/80 mx-6 rounded-md drop-shadow-lg">
+			<button [routerLink]="['/home']"
+				(click)="toggle();"
+				mat-button
+				color="primary"
+				routerLinkActive="!bg-[#56363f] !text-[#bbb9ae] !h-[45px] !font-bold"
+				class="!text-[#bbb9ae] !w-full !mx-auto font-serif text-2xl duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !py-2">
+				Home
+			</button>
+			<button [routerLink]="['/gallery']"
+				(click)="toggle()"
+				mat-button
+				color="primary"
+				routerLinkActive="!bg-[#56363f] !text-[#bbb9ae] !h-[45px] !font-bold"
+				class="!text-[#bbb9ae] !w-full !mx-auto font-serif text-2xl duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !py-2">
+				Gallery
+			</button>
+			<button [routerLink]="['/schedule']"
+				(click)="toggle()"
+				mat-button
+				color="primary"
+				routerLinkActive="!bg-[#56363f] !text-[#bbb9ae] !h-[45px] !font-bold"
+				class="!text-[#bbb9ae] !w-full !mx-auto font-serif text-2xl duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !py-2">
+				Schedule
+			</button>
+			<button [routerLink]="['/regiments']"
+				(click)="toggle()"
+				mat-button
+				color="primary"
+				routerLinkActive="!bg-[#56363f] !text-[#bbb9ae] !h-[45px] !font-bold"
+				class="!text-[#bbb9ae] !w-full !mx-auto font-serif text-2xl duration-150 transition transform active:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none !py-2">
+				Regiments
+			</button>
+
+
+		</div>
+	</div>
+
 
 
 
 </div>
+
 
 
 
@@ -119,250 +214,383 @@
 
 <div class="grid grid-cols-1 lg:grid-cols-3 grid-flow-row auto-rows-max gap-4 content-container !mt-[1em] rounded-sm bg-[#f5eddcfa]">
 
-    <div class="col-span-1 lg:col-span-2">
 
-        <router-outlet></router-outlet>
+	<div class="col-span-1 lg:col-span-2">
 
-    </div>
 
-    <div class="lg:col-start-3 col-span-1">
+		<router-outlet></router-outlet>
 
-        <!-- UPCOMING SCHEDULE WIDGET -->
-        <div *ngIf="currentRoute == '/' || currentRoute == '/gallery' || currentRoute == '/home' || currentRoute == '/orders'"
-            class="shadow-md lg:m-7 bg-[#dfd7c791] py-5 px-8 rounded-md animate-left will-change-auto"
-            style="border-top: 10px #47242e solid;max-height: fit-content;">
-            <h2 class="h2 mb-5"
-                style="padding-bottom: 0.8em;color: #47242e;">
-                Upcoming Schedule</h2>
-            <div id="right-test" class="content-right-desc">
-                <div id="upcomingContent">
-                    <h3><i class='fa-solid fa-calendar-day'
-                            style='color: #47242e;margin-right: 0.4em;font-size: 1.5rem;'></i> {{todayName}}</h3>
-                    <div class="p ml-[1.8em]"  [innerHTML]="EuToday[0].type + '<sup> [EU]</sup>'"></div>
-                    <div class="p ml-[1.8em]" [innerHTML]="UsToday[0].type + '<sup> [NA]</sup>'"></div>
 
-                    <h3><i class='fa-solid fa-calendar-day'
-                            style='color: #47242e;margin-right: 0.4em;font-size: 1.5rem;'></i> {{tomorrowName}}</h3>
-                    <div class="p ml-[1.8em]" [innerHTML]="EuTomorrow[0].type + '<sup> [EU]</sup>'"></div>
+	</div>
 
-                    <div class="p ml-[1.8em]" [innerHTML]="UsTomorrow[0].type + '<sup> [NA]</sup>'"></div>
-                </div>
-            </div>
-        </div>
 
-        <!-- JOIN NOW WIDGET -->
-        <div *ngIf="currentRoute == '/schedule'"
-            class="shadow-md lg:m-7 bg-[#dfd7c791] py-5 px-8 rounded-md animate-left will-change-auto"
-            style="border-top: 10px #47242e solid;max-height: fit-content;">
-            <h2 style="padding-bottom: 0.8em;color: #47242e;" class="h2 mb-5">Join Today!</h2>
-            <div id="right-test" class="content-right-desc">
-                <div id="upcomingContent" class="mt-5">
+	<div class="lg:col-start-3 col-span-1">
 
-                    <div class="">
 
-                        <div class="">
-                            <img class="rounded-sm shadow-lg w-[100%] h-auto mb-5 ring-4 ring-[#b1a08e]/60 ring-offset-2 ring-offset-[#e9e6de] sepia-[.50] opacity-95"
-                                src="https://paarmy.com/galleryItems/1.jpg">
-                        </div>
+		<!-- UPCOMING SCHEDULE WIDGET -->
+		<div *ngIf="currentRoute == '/' || currentRoute == '/gallery' || currentRoute == '/home' || currentRoute == '/orders'"
+			class="shadow-md lg:m-7 bg-[#dfd7c791] py-5 px-8 rounded-md animate-left will-change-auto"
+			style="border-top: 10px #47242e solid;max-height: fit-content;">
+			<h2 class="h2 mb-5"
+				style="padding-bottom: 0.8em;color: #47242e;">
+				Upcoming Schedule
+			</h2>
+			<div id="right-test"
+				class="content-right-desc">
+				<div id="upcomingContent">
+					<h3>
+						<i class='fa-solid fa-calendar-day'
+							style='color: #47242e;margin-right: 0.4em;font-size: 1.5rem;'></i>
+						{{todayName}}
+					</h3>
+					<div [innerHTML]="EuToday[0].type + '<sup> [EU]</sup>'"
+						class="p ml-[1.8em]"></div>
+					<div [innerHTML]="UsToday[0].type + '<sup> [NA]</sup>'"
+						class="p ml-[1.8em]"></div>
 
-                        <div class="">
-                            <ul class="!pl-15 !pb-5 fa-ul">
-                                <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>Click the 'Join
+
+					<h3>
+						<i class='fa-solid fa-calendar-day'
+							style='color: #47242e;margin-right: 0.4em;font-size: 1.5rem;'></i>
+						{{tomorrowName}}
+					</h3>
+					<div [innerHTML]="EuTomorrow[0].type + '<sup> [EU]</sup>'"
+						class="p ml-[1.8em]"></div>
+
+
+					<div [innerHTML]="UsTomorrow[0].type + '<sup> [NA]</sup>'"
+						class="p ml-[1.8em]"></div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- JOIN NOW WIDGET -->
+		<div *ngIf="currentRoute == '/schedule'"
+			class="shadow-md lg:m-7 bg-[#dfd7c791] py-5 px-8 rounded-md animate-left will-change-auto"
+			style="border-top: 10px #47242e solid;max-height: fit-content;">
+			<h2 style="padding-bottom: 0.8em;color: #47242e;"
+				class="h2 mb-5">
+				Join Today!
+			</h2>
+			<div id="right-test"
+				class="content-right-desc">
+				<div id="upcomingContent"
+					class="mt-5">
+
+
+					<div class>
+
+
+						<div class>
+							<img class="rounded-sm shadow-lg w-[100%] h-auto mb-5 ring-4 ring-[#b1a08e]/60 ring-offset-2 ring-offset-[#e9e6de] sepia-[.50] opacity-95"
+								src="https://paarmy.com/galleryItems/1.jpg">
+						</div>
+
+
+						<div class>
+							<ul class="!pl-15 !pb-5 fa-ul">
+								<li>
+									<span class="fa-li">
+										<i class="fa-solid fa-check-square"></i>
+									</span>
+									Click the 'Join
                                     Now' button below.
-                                <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>Message an online
+								</li>
+								<li>
+									<span class="fa-li">
+										<i class="fa-solid fa-check-square"></i>
+									</span>
+									Message an online
                                     Officer or NCO.
-                                <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>Join the
+								</li>
+								<li>
+									<span class="fa-li">
+										<i class="fa-solid fa-check-square"></i>
+									</span>
+									Join the
                                     recruitment office channel.
-                                <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>Have an Officer
+								</li>
+								<li>
+									<span class="fa-li">
+										<i class="fa-solid fa-check-square"></i>
+									</span>
+									Have an Officer
                                     or NCO set up your tags and access.
-                                <li><span class="fa-li"><i class="fa-solid fa-check-square"></i></span>Attend your first
+								</li>
+								<li>
+									<span class="fa-li">
+										<i class="fa-solid fa-check-square"></i>
+									</span>
+									Attend your first
                                     drill and event!
-                            </ul>
-                        </div>
-
-                        <div class="w-[100%] text-center col-span-3">
-                            <button (click)="joinDiscord()" mat-raised-button class="!w-[100%] !bg-[#6e85d3]"><i
-                                    class="fa-brands fa-discord"></i> Join
-                                Discord</button>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <!-- DISCORD USERS WIDGET -->
-        <div *ngIf="currentRoute == '/regiments' || currentRoute == '/events' || currentRoute == '/regiments/69' || currentRoute == '/regiments/72' || currentRoute == '/regiments/116'"
-            class="shadow-md lg:m-7 bg-[#dfd7c791] py-5 lg:px-8 rounded-md animate-left will-change-auto"
-            style="border-top: 10px #47242e solid;max-height: fit-content;">
-            <h2 class="h2 sm:pl-0 pl-5"
-            style="padding-bottom: 0.8em;color: #47242e;">Online Users</h2>
-            <div id="right-test" class="content-right-desc">
-                <div id="upcomingContent">
-
-                    <mat-tab-group [dynamicHeight]='true'>
-
-                        <mat-tab label="69th">
-                            
-                            <!-- <h4 class="text-[#867a6d] ml-7 mb-2">From the 69th</h4> -->
-                            <div class="mt-5">
-                            <div *ngFor="let user of reg69">
-                                <div class="grid grid-cols-4 gap-4">
-                                    <div class="col-span-1 col-start-1 justify-self-end">
-                                        <div class="relative">
-                                            <img class="w-[55px] h-[55px] rounded-full" [src]="user.avatar_url" alt="">
-                                            
-                                            <span *ngIf="user.status == 'online'"
-                                                class="bottom-2.5 left-10 absolute w-4 h-4 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-
-                                            <span *ngIf="user.status == 'idle'"
-                                                class="bottom-2.5 left-10 absolute w-4 h-4 bg-yellow-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-
-                                            <span *ngIf="user.status == 'dnd'"
-                                                class="bottom-2.5 left-10 absolute w-4 h-4 bg-red-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-span-3 col-start-2 justify-self-start">
-                                        <p class="text-[1rem] mb-[-8px]">{{user.username.replace('`', '').replace("'",
-                                            '')}}</p>
-                                        <p class="text-[0.9rem]" *ngIf="user.game">{{user.game.name}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </mat-tab>
+								</li>
+							</ul>
+						</div>
 
 
-                        <mat-tab label="72nd">
-                            <!-- <h4 class="text-[#867a6d] ml-7 mb-2">From the 72nd</h4> -->
-                            <div class="mt-5">
-                            <div *ngFor="let user of reg72">
-                                <div class="grid grid-cols-4 gap-4 content-baseline">
-                                    <div class="col-span-1 col-start-1 justify-self-end">
-                                        <div class="relative">
-                                            <img class="w-[55px] h-[55px] rounded-full" [src]="user.avatar_url" alt="">
-                                            <span *ngIf="user.status == 'online'"
-                                                class="bottom-2.5 left-10 absolute w-4 h-4 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-                                            <span *ngIf="user.status == 'idle'"
-                                                class="bottom-2.5 left-10 absolute w-4 h-4 bg-yellow-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-                                            <span *ngIf="user.status == 'dnd'"
-                                                class="bottom-2.5 left-10 absolute w-4 h-4 bg-red-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-span-3 col-start-2 justify-self-start">
-                                        <p class="text-[1rem] mb-[-8px]">{{user.username.replace('`', '').replace("'",
-                                            '')}}</p>
-                                        <p class="text-[0.9rem]" *ngIf="user.game">{{user.game.name}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </mat-tab>
+						<div class="w-[100%] text-center col-span-3">
+							<button (click)="joinDiscord()"
+								mat-raised-button
+								class="!w-[100%] !bg-[#6e85d3]">
+								<i class="fa-brands fa-discord"></i>
+								Join
+                                Discord
+							</button>
+						</div>
 
 
-                        <mat-tab label="116th">
-                            <!-- <h4 class="text-[#867a6d] ml-7 mb-2">From the 116th</h4> -->
-                            <div class="mt-5">
-                            <div *ngFor="let user of reg116">
-                                <div class="grid grid-cols-4 gap-4">
-                                    <div class="col-span-1 col-start-1 justify-self-end">
-                                        <div class="relative">
-                                            <img class="w-[55px] h-[55px] rounded-full" [src]="user.avatar_url" alt="">
-                                            <span *ngIf="user.status == 'online'"
-                                                class="bottom-2.5 left-10 absolute w-4 h-4 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-                                            <span *ngIf="user.status == 'idle'"
-                                                class="bottom-2.5 left-10 absolute w-4 h-4 bg-yellow-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-                                            <span *ngIf="user.status == 'dnd'"
-                                                class="bottom-2.5 left-10 absolute w-4 h-4 bg-red-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-span-3 col-start-2 justify-self-start">
-                                        <p class="text-[1rem] mb-[-8px]">{{user.username.replace('`', '').replace("'",
-                                            '')}}</p>
-                                        <p class="text-[0.9rem]" *ngIf="user.game">{{user.game.name}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </mat-tab>
+					</div>
 
-                    </mat-tab-group>
+
+				</div>
+			</div>
+		</div>
+
+
+		<!-- DISCORD USERS WIDGET -->
+		<div *ngIf="currentRoute == '/regiments' || currentRoute == '/events' || currentRoute == '/regiments/69' || currentRoute == '/regiments/72' || currentRoute == '/regiments/116'"
+			class="shadow-md lg:m-7 bg-[#dfd7c791] py-5 lg:px-8 rounded-md animate-left will-change-auto"
+			style="border-top: 10px #47242e solid;max-height: fit-content;">
+			<h2 class="h2 sm:pl-0 pl-5"
+				style="padding-bottom: 0.8em;color: #47242e;">
+				Online Users
+			</h2>
+			<div id="right-test"
+				class="content-right-desc">
+				<div id="upcomingContent">
+
+
+					<mat-tab-group [dynamicHeight]='true'>
+
+
+						<mat-tab label="69th">
+
+
+							<!-- <h4 class="text-[#867a6d] ml-7 mb-2">From the 69th</h4> -->
+							<div class="mt-5">
+								<div *ngFor="let user of reg69">
+									<div class="grid grid-cols-4 gap-4">
+										<div class="col-span-1 col-start-1 justify-self-end">
+											<div class="relative">
+												<img [src]="user.avatar_url"
+													class="w-[55px] h-[55px] rounded-full"
+													alt>
+
+
+												<span *ngIf="user.status == 'online'"
+													class="bottom-2.5 left-10 absolute w-4 h-4 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+
+
+												<span *ngIf="user.status == 'idle'"
+													class="bottom-2.5 left-10 absolute w-4 h-4 bg-yellow-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+
+
+												<span *ngIf="user.status == 'dnd'"
+													class="bottom-2.5 left-10 absolute w-4 h-4 bg-red-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+											</div>
+										</div>
+										<div class="col-span-3 col-start-2 justify-self-start">
+											<p class="text-[1rem] mb-[-8px]">
+												{{user.username.replace('`', '').replace("'",
+                                            '')}}
+											</p>
+											<p *ngIf="user.game"
+												class="text-[0.9rem]">
+												{{user.game.name}}
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</mat-tab>
 
 
 
+						<mat-tab label="72nd">
+							<!-- <h4 class="text-[#867a6d] ml-7 mb-2">From the 72nd</h4> -->
+							<div class="mt-5">
+								<div *ngFor="let user of reg72">
+									<div class="grid grid-cols-4 gap-4 content-baseline">
+										<div class="col-span-1 col-start-1 justify-self-end">
+											<div class="relative">
+												<img [src]="user.avatar_url"
+													class="w-[55px] h-[55px] rounded-full"
+													alt>
+												<span *ngIf="user.status == 'online'"
+													class="bottom-2.5 left-10 absolute w-4 h-4 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+												<span *ngIf="user.status == 'idle'"
+													class="bottom-2.5 left-10 absolute w-4 h-4 bg-yellow-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+												<span *ngIf="user.status == 'dnd'"
+													class="bottom-2.5 left-10 absolute w-4 h-4 bg-red-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+											</div>
+										</div>
+										<div class="col-span-3 col-start-2 justify-self-start">
+											<p class="text-[1rem] mb-[-8px]">
+												{{user.username.replace('`', '').replace("'",
+                                            '')}}
+											</p>
+											<p *ngIf="user.game"
+												class="text-[0.9rem]">
+												{{user.game.name}}
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</mat-tab>
 
 
 
-                </div>
-            </div>
-        </div>
-
-        <!-- TOP SCORES USERS WIDGET -->
-        <div *ngIf="currentRoute == '/marksmanship'"
-            class="shadow-md lg:m-7 bg-[#dfd7c791] py-5 px-8 rounded-md animate-left will-change-auto"
-            style="border-top: 10px #47242e solid;max-height: fit-content;">
-            <h2 style="padding-bottom: 0.8em;color: #47242e;" class="h2 mb-5">Top Scores</h2>
-            <div id="right-test" class="content-right-desc">
-                <div id="upcomingContent">
-
-                    <p class="font-[900]">Springfield M1861</p>
-                    <div *ngFor="let item of springfield | slice:0:3; let i=index; ">
-                        <p class="ml-[1.8em] my-[0.8em]"><span
-                                class="text-[#761912] font-[900] text-lg mr-3">{{item.score}}</span> {{item.nickname}}
-                            on {{item.timestamp}} </p>
-                    </div>
-
-                    <p class="font-[900] mt-[1em]">Enfield M1853</p>
-                    <div *ngFor="let item of enfield | slice:0:3; let i=index; ">
-                        <p class="ml-[1.8em] my-[0.8em]"><span
-                                class="text-[#761912] font-[900] text-lg mr-3">{{item.score}}</span> {{item.nickname}}
-                            on {{item.timestamp}} </p>
-                    </div>
-
-                    <p class="font-[900] mt-[1em]">Lorenz M1854</p>
-                    <div *ngFor="let item of lorenz | slice:0:3; let i=index; ">
-                        <p class="ml-[1.8em] my-[0.8em]"><span
-                                class="text-[#761912] font-[900] text-lg mr-3">{{item.score}}</span> {{item.nickname}}
-                            on {{item.timestamp}} </p>
-                    </div>
-
-                    <p class="font-[900] mt-[1em]">Mississippi 1841</p>
-                    <div *ngFor="let item of mississippi | slice:0:3; let i=index; ">
-                        <p class="ml-[1.8em] my-[0.8em]"><span
-                                class="text-[#761912] font-[900] text-lg mr-3">{{item.score}}</span> {{item.nickname}}
-                            on {{item.timestamp}} </p>
-                    </div>
+						<mat-tab label="116th">
+							<!-- <h4 class="text-[#867a6d] ml-7 mb-2">From the 116th</h4> -->
+							<div class="mt-5">
+								<div *ngFor="let user of reg116">
+									<div class="grid grid-cols-4 gap-4">
+										<div class="col-span-1 col-start-1 justify-self-end">
+											<div class="relative">
+												<img [src]="user.avatar_url"
+													class="w-[55px] h-[55px] rounded-full"
+													alt>
+												<span *ngIf="user.status == 'online'"
+													class="bottom-2.5 left-10 absolute w-4 h-4 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+												<span *ngIf="user.status == 'idle'"
+													class="bottom-2.5 left-10 absolute w-4 h-4 bg-yellow-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+												<span *ngIf="user.status == 'dnd'"
+													class="bottom-2.5 left-10 absolute w-4 h-4 bg-red-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+											</div>
+										</div>
+										<div class="col-span-3 col-start-2 justify-self-start">
+											<p class="text-[1rem] mb-[-8px]">
+												{{user.username.replace('`', '').replace("'",
+                                            '')}}
+											</p>
+											<p *ngIf="user.game"
+												class="text-[0.9rem]">
+												{{user.game.name}}
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</mat-tab>
 
 
-                </div>
-            </div>
-        </div>
+					</mat-tab-group>
 
 
 
-    </div>
+
+
+
+
+				</div>
+			</div>
+		</div>
+
+
+		<!-- TOP SCORES USERS WIDGET -->
+		<div *ngIf="currentRoute == '/marksmanship'"
+			class="shadow-md lg:m-7 bg-[#dfd7c791] py-5 px-8 rounded-md animate-left will-change-auto"
+			style="border-top: 10px #47242e solid;max-height: fit-content;">
+			<h2 style="padding-bottom: 0.8em;color: #47242e;"
+				class="h2 mb-5">
+				Top Scores
+			</h2>
+			<div id="right-test"
+				class="content-right-desc">
+				<div id="upcomingContent">
+
+
+					<p class="font-[900]">Springfield M1861</p>
+					<div *ngFor="let item of springfield | slice:0:3; let i=index; ">
+						<p class="ml-[1.8em] my-[0.8em]">
+							<span class="text-[#761912] font-[900] text-lg mr-3">{{item.score}}</span>
+							{{item.nickname}}
+                            on {{item.timestamp}}
+						</p>
+					</div>
+
+
+					<p class="font-[900] mt-[1em]">Enfield M1853</p>
+					<div *ngFor="let item of enfield | slice:0:3; let i=index; ">
+						<p class="ml-[1.8em] my-[0.8em]">
+							<span class="text-[#761912] font-[900] text-lg mr-3">{{item.score}}</span>
+							{{item.nickname}}
+                            on {{item.timestamp}}
+						</p>
+					</div>
+
+
+					<p class="font-[900] mt-[1em]">Lorenz M1854</p>
+					<div *ngFor="let item of lorenz | slice:0:3; let i=index; ">
+						<p class="ml-[1.8em] my-[0.8em]">
+							<span class="text-[#761912] font-[900] text-lg mr-3">{{item.score}}</span>
+							{{item.nickname}}
+                            on {{item.timestamp}}
+						</p>
+					</div>
+
+
+					<p class="font-[900] mt-[1em]">Mississippi 1841</p>
+					<div *ngFor="let item of mississippi | slice:0:3; let i=index; ">
+						<p class="ml-[1.8em] my-[0.8em]">
+							<span class="text-[#761912] font-[900] text-lg mr-3">{{item.score}}</span>
+							{{item.nickname}}
+                            on {{item.timestamp}}
+						</p>
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+	</div>
 </div>
+
 
 <div class="grid lg:grid-cols-3 gap-4 grid-cols-1 pt-[10px] justify-center justify-items-center select-none">
 
-    <div class="lg:col-span-1 lg:col-start-1 lg:col-end-2">
-        <span id="rebelcounter" class="mr-[210px] active:mr-[260px] block w-[100%]" (click)="toggleRK()">{{rc}}</span>
-    </div>
 
-    <div class="lg:col-span-1 lg:col-start-2 lg:col-end-3">
-        <span id="cannon" class="!hidden sm:!block">
-            <img src="https://paarmy.com/assets/wheel.png" class="wheel"><img src="https://paarmy.com/assets/barrel.png"
-                class="barrel"><img src="https://paarmy.com/assets/fire2.png" class="fire">
-        </span>
-    </div>
+	<div class="lg:col-span-1 lg:col-start-1 lg:col-end-2">
+		<span (click)="toggleRK()"
+			id="rebelcounter"
+			class="mr-[210px] active:mr-[260px] block w-[100%]">
+			{{rc}}
+		</span>
+	</div>
 
 
+	<div class="lg:col-span-1 lg:col-start-2 lg:col-end-3">
+		<span id="cannon"
+			class="!hidden sm:!block">
+			<img src="https://paarmy.com/assets/wheel.png"
+				class="wheel">
+			<img src="https://paarmy.com/assets/barrel.png"
+				class="barrel">
+			<img src="https://paarmy.com/assets/fire2.png"
+				class="fire">
+		</span>
+	</div>
 
-    <div id="footer" class="lg:col-span-1 lg:col-start-3 lg:col-end-4">
 
-        &copy; 2023 - The Pennsylvania Army - <a href='https://tonewebdesign.com' target='_blank'>molex</a>
 
-    </div>
+
+	<div id="footer"
+		class="lg:col-span-1 lg:col-start-3 lg:col-end-4">
+		&copy; 2023 - The Pennsylvania Army -
+		<a href='https://tonewebdesign.com'
+			target='_blank'>
+			molex
+		</a>
+
+
+	</div>
+
 
 </div>
