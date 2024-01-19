@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GalleryService } from '../services/gallery.service';
-
+/**
+ * TODO: Lightbox/pop-up modal for images, maybe a carousel, also side not upload gettysburg images
+ */
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
