@@ -1,4 +1,11 @@
-<div class="nav bg-[#38455a]/95 backdrop-blur-sm sm:mt-[3em] sm:w-full mx-auto py-1.5 lg:py-2.5 sm:rounded-sm shadow-lg w-full sticky top-0 left-0 right-0 sm:h-auto sm:min-h-0 z-10">
+<div class="absolute right-4 lg:top-2 top-[125px] !z-20 lg:hidden inline-block">
+	<a href="https://paarmy.com/bobby"
+	mat-raised-button color="primary">
+	RIP 👑 KingBobby
+</a>
+</div>
+
+<div class="nav !z-0 bg-[#38455a]/95 backdrop-blur-sm sm:mt-[3em] sm:w-full mx-auto py-1.5 lg:py-2.5 sm:rounded-sm shadow-lg w-full sticky top-0 left-0 right-0 sm:h-auto sm:min-h-0">
 	<div class="mx-auto px-2 sm:px-6 lg:px-8">
 		<div class="relative flex h-16 items-center justify-between">
 			<div class="absolute inset-y-0 sm:hidden">
@@ -225,7 +232,13 @@
 
 
 	<div class="lg:col-start-3 col-span-1">
-
+		
+		<div class="hidden lg:block text-right">
+			<a href="https://paarmy.com/bobby"
+			mat-raised-button color="primary">
+			RIP 👑 KingBobby
+		</a>
+		</div>
 
 		<!-- UPCOMING SCHEDULE WIDGET -->
 		<div *ngIf="currentRoute == '/' || currentRoute == '/gallery' || currentRoute == '/home' || currentRoute == '/orders'"
